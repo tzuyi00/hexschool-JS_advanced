@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>15.執行緒與同步、非同步</title>
   <script>
+    // JS是單執行緒的語言 -> 一次只能做一件事
+
     // 01
+    // JS遇到非同步時，會先將此放到事件佇列裡，待同步事件依序處理完後才處理非同步事件
+    // setTimeout、 addEventListener、Ajax 皆屬於非同步
     function eatBreakfast() {
       console.log('吃早餐');
     }

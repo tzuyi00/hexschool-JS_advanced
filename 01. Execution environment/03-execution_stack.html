@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>9.執行環境與執行堆疊</title>
   <script>
+    // 利用開發者工具的Sources查詢
+    // 執行環境 Scope
+    // 執行堆疊 Call Stack
 
 
     function openTheDoor(num) {
@@ -16,9 +19,11 @@
     function openDoors() {
       openTheDoor(1);
 
-      for (var i = 2; i < 5; i++) {
+      for (var i = 1; i < 5; i++) {
         openTheDoor(i);
+        console.log(openTheDoor(i));
       }
+
     }
     openDoors();
 

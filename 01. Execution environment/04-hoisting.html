@@ -5,73 +5,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>11.提升、13.Not defined vs undefined</title>
   <script>
 
   // var a;
-  var a = null;
+  var a = null; // 若要賦予一個空值在變數上請使用"null"，而不要用"undefined"
   console.log(a);
 
+// ===== 創造階段 (提升性質)  與 執行階段 =====
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // var Ming; // 創造階段
-    // Ming = '小明'; // 執行
+    // 以變數為例:
+    // var Ming; // 創造階段(創造一個環境並在記憶體上給一個空間)
+    // Ming = '小明'; // 執行階段(把程式碼依序執行並賦予他值)
     // console.log(Ming);
 
-    // // 創造階段
+    // --------------------------------
+
+    // 以函式為例:
+    // 創造階段(已把整個函式載入，已可以運行了)
     // function callName() {
     //   console.log('呼叫小明');
     // }
 
-    // // 執行
+    // // 執行階段
     // callName();
-    
-    // ===
-    // // 創造階段
+
+    // --------------------------------
+
+    // 創造階段
     // var callName;
 
-    // // 執行
+    // 賦予值
     // callName = function () {
     //   console.log('呼叫小明');
     // }
-    // callName();
-    
 
-    // 函式優先
-    // 創造階段
+    // 執行
+    // callName();
+
+    // --------------------------------
+
+    // 創造階段時函式優先(順序兌換結果一樣)
+    // 創造階段 ->
+    // 1.會先尋找函式
     // function callName() {
     //   console.log('呼叫小明 1');
     // }
+
+    // 2.變數往前移
     // var callName;
 
-    // // 執行
+    // 3.賦予值
     // callName = function () {
     //   console.log('呼叫小明 2');
     // }
-    // callName();
-    
 
-    // // 創造
+    // 4.執行
+    // callName();
+
+    // --------------------------------
+
+    // 創造階段
     // function callName() {
     //   console.log(Ming);
     // }
+
+    // 宣告變數
     // var Ming
-    // // 執行
-    // callName();
+
+    // 執行
+    // callName(); //undefined
+
+    // 賦予值
     // Ming = '小明';
 
+    // --------------------------------
 
     // // 創造
     // function callName() {
@@ -82,19 +90,21 @@
     // }
 
     // // 執行
-    // callName(); // 第一次執行
-    // callName(); // 第二次執行
+    // callName(); // 第一次執行 //杰倫
+    // callName(); // 第二次執行 //杰倫
+
+    // --------------------------------
 
     // 考題：
-    // whosName()
-    // function whosName() {
-    //   if (name) {
-    //     name = '杰倫';
-    //   }
-    // }
-    // var name = '小明';
-    // console.log(name);
-    
+    whosName()
+    function whosName() {
+      if (name) {
+        name = '杰倫';
+      }
+    }
+    var name = '小明';
+    console.log(name);
+
   </script>
 </head>
 
