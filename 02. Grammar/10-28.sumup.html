@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>28.總結</title>
+  <script>
+    // var a = 1;
+    // var b = new Number(1); //Number {1} -> 為物件
+    // console.log(a == b);  //true
+    // console.log(a === b); //false
+
+    // -------------------------------------------------------
+
+    // var a = 1;
+    // var b = 0;
+    // console.log(1 || 0); //1
+
+    // -------------------------------------------------------
+
+    // var a = 1;
+    // var b = 2;
+    // var c = 0;
+    // console.log(a && b && c); //a先與b比對->2，2再與c比對->0
+    // console.log(c || c && c || a); //執行順序:&& > || => c&&c->0, c||0->0, 0||a->1
+    // console.log(a && b || c && a); //2
+
+    // -------------------------------------------------------
+
+    // var a = 1 + 1 === 1; a是 2===1 ->false
+    // console.log(a); //false
+
+    // -------------------------------------------------------
+
+    // console.log(1000 < 10000 < 10); //true
+    // 拆解 ->>
+    // console.log(1000 < 10000); //true 字串和布林做比對時，會被轉為數值
+    // console.log(1 <10); //true
+
+    // -------------------------------------------------------
+
+    var a = '1';
+    var b = 2;
+    var c = (a > b) ? a * b : sum(a, b);
+    function sum(a, b) {
+      return a + b; // '1'+ 2 => 12
+    }
+    console.log(c); //12
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

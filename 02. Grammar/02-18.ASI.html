@@ -5,16 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>18.ASI自動插入分號</title>
   <script>
     function callName() {
       return; '叫我小明';
     }
     console.log(callName());
 
-    //
-    if (1 > 10) a = 1; else a = 2; console.log(a);
+    // -------------------------------------
 
+    if (1 > 10) a = 1; else a = 2; console.log(a);
+    // =
+    if (1 > 10) a = 1
+    else a = 2
+    console.log(a);
+
+    // -------------------------------------
 
     (function () {
       console.log('小明')

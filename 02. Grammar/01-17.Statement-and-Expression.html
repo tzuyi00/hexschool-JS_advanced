@@ -5,19 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>17.陳述式與表達式</title>
   <script>
-    // expression
+    // 表達式expression，會回傳結果
     100 + 100;
-    
 
-    // statement
-    // var ming;
+
+    // 陳述式statement，不會回傳結果
+    var ming;
     if (1 === 1) {
-      
+
     }
 
-    // ming = '小明';
+    // -------------------------------------
 
     // 函式陳述式、具名函式
     function callName() {
@@ -29,12 +29,16 @@
 
     }
 
-    {
-      const ming = '小明';
-    }
-    console.log(ming)
+    // -------------------------------------
 
-    // 物件實字
+    {
+      const ming = '小明'; //es6的const可在{}內定義變數
+    }
+    console.log(ming); //報錯，因作用域只在{}內
+
+    // -------------------------------------
+
+    // 物件實字(物件設為一變數)
     var a = {
       ming: '小明'
     }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>20.動態型別</title>
+  <script>
+    // 動態型別 -> 型別可以被做更換的
+    // 執行階段才會賦予確立型別
+    var myName;
+    myName = '小明';
+
+    console.log(typeof myName); //string
+    console.log(typeof '小明'); //string
+
+    // -------------------------------------
+
+    // 顯性的轉換 Explicit conversion
+    var num = 1;
+    console.log(typeof num); //number
+    num = '文字';
+    console.log(typeof num); //string (型別可以被做更換)
+
+    // -------------------------------------
+
+    // 隱性的轉換 Implicit conversion
+    var num = 1;
+    console.log(num, typeof num); //1 "number"
+
+    num = num + ''; //數字+字串，型別會被轉為字串
+    console.log(num, typeof num); //1 string
+
+    num = num * 3; //字串被做運算，又被轉為數字了
+    console.log(num, typeof num); //3 "number"
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

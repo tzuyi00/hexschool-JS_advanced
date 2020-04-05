@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>21.原始型別及物件型別</title>
   <script>
     // JavaScript 有哪些型別
     var a, b, c, d;
@@ -15,19 +15,20 @@
     b = true;
     c = {};
     d = null; // 音標 nʌl
-    console.log(typeof e);
+    console.log(typeof d); //object -> 為JS的錯誤，正確型別為null
+    console.log(typeof e); //undefined ->typeof針對not defined(沒定義)的保護措施，使不出錯
 
-    // 原始型別
-    // 物件型別
+    // 原始型別:Boolean、Null、Undefined、Number、String、BigInt、Symbol
+    // 物件型別 object
 
     a = 'ming ';
     console.log(a.length);
     console.log(a.toUpperCase());
     console.log(a.trim());
-    
+
     var e = new String(a);
-    console.log(a, e);
-    
+    console.log(a, e); //ming string{ming} -> e成為一物件，內有很多方法
+
   </script>
 </head>
 

@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>25.truthy、falsy</title>
   <script>
+
+    console.log(new Number(0)); //Number {0} -> 為一物件，為真值
+    console.log(new Boolean(false)); //Boolean { false } -> 一樣為物件
 
     if ([]) {
       console.log('執行程式');

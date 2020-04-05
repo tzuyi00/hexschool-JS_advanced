@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>23.優先性及相依性</title>
+  <script>
+
+    // var a = 2 * 2 + 2 * 3; //優先性:* > + > =
+    // console.log(a); //10
+
+    // ------------------------------------------------
+
+    // console.log(1 < 2 < 3); //true
+
+    // console.log(3 > 2 > 1); //false
+    // 拆解 ->>
+    // console.log(3 > 2); //true
+    // console.log(1 > 1); //true自動變為1，1並不是>1，因此是false
+
+    // ------------------------------------------------
+
+    var a = 1;
+    var b = 2;
+    a = b = 3; // a = 3 賦予至 b 的 “回傳結果”
+    // 拆解
+    // b = 3;
+    // a = (b=3 這個表達是回傳的結果，因此a也等於3);
+    console.log(a, b); // 3 3
+
+    // ------------------------------------------------
+
+    var b = {};
+    // b.a 是 2，且不可被改寫
+    Object.defineProperty(b, 'a', {
+      value: 2,
+      writable: false
+    });
+    // b.b 是 3，且不可被改寫
+    Object.defineProperty(b, 'b', {
+      value: 3,
+      writable: false
+    });
+
+    b.a = 3; // 仍舊是2，不可被改寫
+    console.log(b); //{a: 2, b: 3} 為一個物件
+
+    var a = 3;
+
+    a = b.b = b.a = 1;
+    console.log(a); //a=後面表達式所回傳的結果=1，不是等於b.b或b.a所代表的值，並改寫掉上方的定義
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
