@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var family = {
+      name: '小明家',
+      deposit: 1000,
+      members: {
+        mom: '老媽',
+        ming: '小明'
+      },
+      '1': '1',
+      2: '2', //雖然物件內的形式是數字，但屬性一定是字串
+      '$-小明家': '$-小明家 string', //屬性是字串的話，就可以用特殊字元不受影響
+
+      callFamily: function() {
+        console.log('聯絡小明家');
+      }
+    };
+
+    //用.取物件值的做法
+    console.log(family.name); //小明家
+    console.log(family.members.mom); //老媽
+
+    //用[]取物件值的做法
+    console.log(family['name']); //小明家
+    console.log(family['members']['mom']); //老媽
+
+    //將key定義為一變數，取變數也可得到值
+    var a = 'name';
+    console.log(family[a]); //小明家
+
+    // 數字無法用.方法取值，[]可以
+    console.log(family[1]); //1
+    console.log(family[2]); //2
+
+    console.log(family['$-小明家']); //$-小明家 string
+
+    //執行物件內的函式(.寫法及[]寫法)
+    family.callFamily(); //聯絡小明家
+    family['callFamily'](); //聯絡小明家
+
+    // 新增屬性
+    family.dog = '小白';
+    family['kitten'] = '小貓';
+    family['$'] = 'money';
+
+    // 刪除屬性
+    delete family.deposit;
+    delete family['$'];
+    console.log(family);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
