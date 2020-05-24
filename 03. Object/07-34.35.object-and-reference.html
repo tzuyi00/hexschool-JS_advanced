@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+  // 34.
+  // ★物件(陣列、函式)=>傳參考
+
+    // var person = '小明';
+    // var person2 = person;
+    // person2 = '杰倫';
+    // console.log(person, person2); //小明 杰倫
+// --------------------------------------------------------
+
+    // var person = {
+    //   name: '小明'
+    // }
+    // var person2 = person; 
+    // person2.name = '杰倫';
+    // console.log(person, person2); //杰倫 杰倫
+    // console.log(person === person2); //true
+// --------------------------------------------------------
+
+    // var person = {
+    //   name: '小明'
+    // }
+    // var person2 = person; 
+    // var person2 = {
+    //   name: '小明'
+    // }
+    // console.log(person, person2); //小明 小明
+    // console.log(person === person2); //false
+// --------------------------------------------------------
+
+// 35.
+    // var family = {
+    //   name: '小明家',
+    //   members: {
+    //     father: '老爸',
+    //     mom: '老媽',
+    //     ming: '小明'
+    //   },
+    // };
+    // var member = family.members;
+    // member.ming = '大明'
+    // console.log(member, family.members); //兩者答案同，使用同個參考物件
+  // --------------------------------------------------------
+
+    // var a = { x: 1 };
+    // a.y = a;
+    // console.log(a); //a裡的y=a，無限循環
+  // --------------------------------------------------------
+
+    var a = { x: 1 };
+    var b = a;
+    a = a.y = { x: 2 };
+    // 1. a = { x: 2 } 是一個運算式
+    // 2. a.y = a = { x: 2 } 同時執行的，沒順序之分，可看成a={x:2},a.y={x:2}，分開運算
+    // a.y 找的是原本的參考路徑
+    console.log('a.y: ' + a.y);
+    console.log('b: ' + b);
+    console.log(a === b.y); //true 用同一個參考物件
+    
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
