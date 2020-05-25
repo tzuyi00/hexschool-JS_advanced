@@ -16,8 +16,10 @@
       name: '小明'
     }
 
+    // 在物件下未定義的屬性是undefined，在undefined下是無法新增任何屬性
 
-    console.log(window.a);
+    // console.log(a); // a is not defined 報錯，導致程式碼中斷下面無法顯示
+    console.log(window.a); //undefined 需查看全域物件下屬性的作法
     console.log(family);
 
   </script>
