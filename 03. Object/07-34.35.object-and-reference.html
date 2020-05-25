@@ -9,6 +9,7 @@
   <script>
   // 34.
   // ★物件(陣列、函式)=>傳參考
+  // ※每新增一物件，會多一個記憶體參考空間
 
     // var person = '小明';
     // var person2 = person;
@@ -19,7 +20,7 @@
     // var person = {
     //   name: '小明'
     // }
-    // var person2 = person; 
+    // var person2 = person;
     // person2.name = '杰倫';
     // console.log(person, person2); //杰倫 杰倫
     // console.log(person === person2); //true
@@ -28,7 +29,7 @@
     // var person = {
     //   name: '小明'
     // }
-    // var person2 = person; 
+    // var person2 = person;
     // var person2 = {
     //   name: '小明'
     // }
@@ -55,16 +56,24 @@
     // console.log(a); //a裡的y=a，無限循環
   // --------------------------------------------------------
 
+    // var a = { x: 1 };
+    // var b = a;
+    // a = a.y = { x: 2 };
+    // // 1. a = { x: 2 } 是一個運算式
+    // // 2. a.y = a = { x: 2 } 同時執行的，沒順序之分，可看成a={x:2},a.y={x:2}，分開運算
+    // // a.y 找的是原本的參考路徑
+    // console.log('a.y: ' + a.y);
+    // console.log('b: ' + b);
+    // console.log(a === b.y); //true 用同一個參考物件
+  // --------------------------------------------------------
+
     var a = { x: 1 };
     var b = a;
-    a = a.y = { x: 2 };
-    // 1. a = { x: 2 } 是一個運算式
-    // 2. a.y = a = { x: 2 } 同時執行的，沒順序之分，可看成a={x:2},a.y={x:2}，分開運算
-    // a.y 找的是原本的參考路徑
-    console.log('a.y: ' + a.y);
-    console.log('b: ' + b);
-    console.log(a === b.y); //true 用同一個參考物件
-    
+    a.x = { x: 2 };
+    a.y = a = { y: 1 };
+    console.log(a); //
+    console.log(b); //
+
   </script>
 </head>
 
