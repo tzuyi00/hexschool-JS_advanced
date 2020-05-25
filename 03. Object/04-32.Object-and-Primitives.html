@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 物件與純值
+    var family = {};
+    family.name = '小明家';
+    console.log(family); //★物件可新增屬性 //name:"小明家"
+
+    var newString = '小明家';
+    newString.name = '小明';
+    console.log(newString); //★純值無法新增屬性 //小明家
+
+    var newString2 = new String('小明家');  //建構式方式
+    newString2.name = '小明';
+    console.log(newString2);
+
+    var newArray = [1, 2, 3];
+    newArray.name = '小明';
+    console.log(newArray);
+
+    function callName() {
+      console.log('呼叫小明');
+    }
+    console.dir(callName); //函式性質一樣是物件，只是多了可被呼叫的功能
+    callName.name = '小明'; //函式裡的name屬性無法被覆蓋
+    callName.ming = '小明'; //新增屬性
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

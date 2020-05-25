@@ -55,6 +55,14 @@
     delete family['$'];
     console.log(family);
 
+    // 變數無法被刪除，屬性才可以
+    var a = 1;
+    b = 2;
+    delete a;
+    delete b;
+    console.log(window); //a沒被刪除 b刪除了
+
+
   </script>
 </head>
 
