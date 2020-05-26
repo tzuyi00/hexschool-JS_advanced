@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>35物件參考觀念的實際運作模式 重要!!!</title>
   <script>
   // 34.
   // ★物件(陣列、函式)=>傳參考
@@ -61,9 +61,9 @@
     // a = a.y = { x: 2 };
     // // 1. a = { x: 2 } 是一個運算式
     // // 2. a.y = a = { x: 2 } 同時執行的，沒順序之分，可看成a={x:2},a.y={x:2}，分開運算
-    // // a.y 找的是原本的參考路徑
-    // console.log('a.y: ' + a.y);
-    // console.log('b: ' + b);
+    // // a.y={x:2} 改變的是原本的參考路徑(0x01)
+    // console.log('a.y: ' + a.y); //undefined 因現在的a指向0x02,沒有y值
+    // console.log('b: ' + b); //指向0x01
     // console.log(a === b.y); //true 用同一個參考物件
   // --------------------------------------------------------
 

@@ -16,10 +16,10 @@
         name: '小明'
       }
     ];
-    
+
     newArray.push(5);
-    newArray.name = '小明';
-    newArray[5] = '杰倫';
+    newArray.name = '小明'; //加入新的內容，不會影響長度
+    newArray[5] = '杰倫'; //新增陣列第五個位置
     newArray[7] = '漂亮阿姨';
     console.log(newArray);
 
@@ -29,7 +29,7 @@
 
     newArray.forEach(function(item) {
       console.log(item);
-      
+
     })
   </script>
 </head>
