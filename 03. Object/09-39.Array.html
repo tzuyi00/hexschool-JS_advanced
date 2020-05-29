@@ -20,7 +20,7 @@
     newArray.push(5);
     newArray.name = '小明'; //加入新的內容，不會影響長度
     newArray[5] = '杰倫'; //新增陣列第五個位置
-    newArray[7] = '漂亮阿姨';
+    newArray[7] = '漂亮阿姨'; //跳過第六個位置新增陣列，JS會自動補上空值->undefined
     console.log(newArray);
 
     // for (var i = 0; i < newArray.length; i ++) {
