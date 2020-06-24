@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+  
+    // (function () {
+    //   console.log('立即函式');
+    //   // 1. 不用被呼叫，立刻執行(可不需具名)
+    //   // 2. 無法在函式外被再次執行
+    // })();
+// ----------------------------------------------------------
+
+    // (function() {
+    //   var Ming = '小明';
+    //   console.log(Ming);
+    //   // 限制變數的作用域
+    // })();
+    // console.log(Ming); //函式外無法被執行
+// ----------------------------------------------------------
+
+    // var whereMing = (function (where) {
+    //   console.log(where);
+    //   return where;
+    // })('小明在這');
+    // console.log(whereMing);
+// ----------------------------------------------------------
+
+    // // 立即函式傳遞變數的手法
+    // var a = {};
+    // (function(b) {
+    //   b.person = '小明';
+    // })(a);
+
+    // console.log(a); //{person: "小明"} 
+
+    // // 此時a參考物件已被新增，再帶入新的立即函式時，就可讀取到person的值
+    // (function(c) {
+    //   console.log(c.person); //小明
+    // })(a)
+// ----------------------------------------------------------
+
+    // 透過全域物件傳遞值
+    (function(global) {
+      global.person = '小明';
+    })(window) //window屬全域物件
+    ;(function() {
+      console.log(person); //小明
+    })()
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

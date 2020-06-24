@@ -13,23 +13,30 @@
     //   var result = '';
     //   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     //   var charactersLength = characters.length;
+    //   console.log(charactersLength);
     //   for (var i = 0; i < length; i++) {
     //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
     //   }
     //   return result;
     // }
-    
+
+    // console.log(randomString(11));
+//----------------------------------------------------
+
+    // // var demoData = []; //變數在外層時，記憶體不會被釋放掉
+
     // function getData() {
-    //   var demoData = [];
+    //   var demoData = []; //變數在內層時，函式執行完後，因無法再參照此變數，會被釋放掉
     //   for (let i = 0; i < 1000; i++) {
     //     demoData.push(randomString(1000))
     //   }
+    //   // 在子函式使用父函式所宣告的變數，可避免父函式的變數在無任何參照下被釋放掉
     //   setTimeout(function() {
     //     demoData;
-    //   }, 10000);
+    //   }, 10000); //10秒後才被釋放掉
     // }
     // getData();
-
+// ---------------------------------------------------
 
     function storeMoney() {
       var money = 1000;
@@ -38,18 +45,18 @@
         return money;
       }
     }
-    // console.log(storeMoney()(100));
+    console.log(storeMoney()(100)); //1100
 
     var MingMoney = storeMoney();
     // console.log(MingMoney);
-    console.log(MingMoney(100));
-    console.log(MingMoney(100));
-    console.log(MingMoney(100));
+    console.log(MingMoney(100)); //1100
+    console.log(MingMoney(100)); //1200
+    console.log(MingMoney(100)); //1300
     
     var JayMoney = storeMoney();
-    console.log(JayMoney(1000));
-    console.log(JayMoney(1000));
-    console.log(JayMoney(1000));
+    console.log(JayMoney(1000)); //2000
+    console.log(JayMoney(1000)); //3000
+    console.log(JayMoney(1000)); //4000
 
   </script>
 </head>

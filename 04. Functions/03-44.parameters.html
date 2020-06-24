@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+    // 函式包含哪些變數
+    // var globalVariable = '全域變數';
+    // var obj = {
+    //   aFunction: function(para) {
+    //     var localVariables = '區域變數';
+    //     console.log(para, localVariables, arguments, this, globalVariable);
+    //     // arguments會分別顯示在該次函式中有哪些參數值
+    //     // 包含傳入的參數
+    //   }
+    // }
+
+    // obj.aFunction('一段描述', 2, 3);
+
+    // -----------------------------------------------------
+
+    // function callName(a) {
+      
+    //   console.log(a); //function a() {}
+      
+    //   function a() {} //定義a，會被拉到最上面，但不會超過整個function callName()的上面
+    //   var a;
+    //   console.log(a); //function a() {}
+    //   a = '杰倫';
+    //   console.log(a); //杰倫
+      
+    // }
+    // callName('小明')
+
+    // -----------------------------------------------------
+
+    // function callMore(d, c, b, a) {
+    //   console.log(d, c, b, a); //a b c undefined
+    // }
+    // var a = 'a';
+    // var b = 'b';
+    // var c = 'c';
+    // callMore(a, b, c);
+
+    // -----------------------------------------------------
+
+    // function callObject(obj) {
+    //   obj.name = '杰倫家';
+    // }
+    // var family = {
+    //   name: '小明家'
+    // }
+    // callObject(family);
+    // console.log(family); //name: 杰倫家
+
+    // -----------------------------------------------------
+
+    // ★callback function
+    // function callSomeone(name, a) {
+    //   console.log(name + '你好', a)
+    // }
+
+    // function functionB(fn) { 
+    //   fn('小明', 1);
+    // }
+
+    // //函式callSomeone()變成參數fn，帶入functionB()
+    // functionB(callSomeone)
+
+    // -----------------------------------------------------
+
+    // ★什麼是arguments
+    function callArg(a) {
+      console.log(a, arguments); // arguments會分別顯示在該次函式中有哪些參數值，為類陣列
+
+      // 可用for迴圈把arguments值取出，但他不是真正的陣列，因此無法用forEach方法取
+      for (let index = 0; index < arguments.length; index++) {
+        console.log('for迴圈',arguments[index]);
+      }
+      // arguments.forEach(function() {
+      //   //取不出來
+      // })
+
+    }
+    callArg(1, 2, 3, '4')
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -8,6 +8,8 @@
   <title>Document</title>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script>
+    // json屬性一定式字串，並且需用""雙引號包住，最後一物件後面不能有,
+
     var family = {
       name: '小明家',
       members: {
@@ -16,14 +18,16 @@
         ming: '小明'
       },
     }
+
+    // // 用json將物件轉為字串印出
     // var json = JSON.stringify(family)
-    // console.log(json);
+    // console.log(json); 
 
-
-    // 原生 AJAX
+// ----------------------------------------------
+    // 原生JS AJAX
     // function getData() {
-    //   console.log(this.response);
-    //   var data = JSON.parse(this.response);
+    //   console.log(this.response); //取得的是字串(是用字串做傳遞的)
+    //   var data = JSON.parse(this.response); //將字串轉回js物件格式
     //   console.log(data);
 
     // }
@@ -33,13 +37,13 @@
     // oReq.open("GET", "family.json");
     // oReq.send();
 
-
-    // 框架 AJAX
-    // $.ajax({
-    //   url: "family.json",
-    // }).done(function (data) {
-    //   console.log(data);
-    // });
+// ----------------------------------------------
+    // 框架jQuery AJAX
+    $.ajax({
+      url: "family.json",
+    }).done(function (data) {
+      console.log(data); //jQuery取得後可自動轉為js物件格式
+    });
 
   </script>
 </head>

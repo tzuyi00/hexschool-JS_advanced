@@ -24,16 +24,26 @@
       }
     };
     // console.log(person);
-    // person.greeting();
-    // person['哈囉']();
+    // person.greeting(); //哈囉，你好
+    // person['哈囉'](); //我是小明
+// ---------------------------------------------------------
 
     // 運用以下陣列及 for 迴圈型式，執行上面的函式
     // var personMethod = ['greeting', '哈囉'];
 
+    // // 法一 for:
     // for (var i = 0; i < personMethod.length; i ++) {
-    //   console.log(personMethod[i]);
-    //   person[personMethod[i]]();
+    //   // console.log(personMethod[i]); //greeting 哈囉
+    //   person[personMethod[i]](); //哈囉，你好 我是小明
     // }
+    
+
+    // // 法二 forEach:
+    // personMethod.forEach(function(item) {
+    //   // console.log(item); //greeting 哈囉
+    //   person[item](); //哈囉，你好 我是小明
+    // });
+// ---------------------------------------------------------
     
     // 說明最終結果，並解釋其流程
     function changeName(data) {
@@ -49,13 +59,13 @@
         ming: '小明'
       }
     }
-    var family2 = jQuery.extend({}, changeName(family));
+    var family2 = jQuery.extend({}, changeName(family)); // jQuery淺層複製寫法
     family2.members.jay = '杰倫';
 
-    // console.log('family.name', family.name)
-    // console.log('family.members.jay', family.members.jay);
-    // console.log(family === family2);
-    // console.log(family.members === family2.members);
+    console.log('family.name', family.name) //杰倫家
+    console.log('family.members.jay', family.members.jay); //杰倫
+    console.log(family === family2); //false 
+    console.log(family.members === family2.members); //true 
     console.log(family, family2);
   </script>
 </head>

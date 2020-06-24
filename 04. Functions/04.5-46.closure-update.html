@@ -8,17 +8,27 @@
   <title>Document</title>
   <script>
     
-    // 申論題
     // function arrFunction() {
     //   var arr = [];
-    //   for (let i = 0; i < 3; i++) {
 
+    //   for (var i = 0; i < 3; i++) { //改let語法
+
+    //     // 立即函式
+    //     // (function (j) {
+    //     //   arr.push(function () {
+    //     //     console.log('j:'+j);
+    //     //   });
+    //     // })(i)
+
+        
     //     arr.push(function () {
-    //       console.log(i);
+    //       console.log('i:'+i);
     //     });
 
     //   }
     //   // console.log('i', i);
+    //   // console.log('arr:'+arr);
+    //   console.log(arr);
       
     //   return arr;
     // }
@@ -27,7 +37,24 @@
     // fn[1]();
     // fn[2]();
 
+// ---------------------------------------------------------
+
     // 函式工廠
+    // function storeMoney(initValue) {
+    //   var money = initValue || 1000; // initValue有值則帶入，沒值則帶入1000
+    //   // console.log(money); //100
+
+    //   return function(price) {
+    //     // console.log(price); //500
+    //     money += price;
+    //     return money;
+    //   }
+    // }
+
+    // var MingMoney = storeMoney(100);
+    // console.log(MingMoney(500));
+
+// ------------------------------------------------------
     // 私有方法
     function storeMoney(initValue) {
       var money = initValue || 1000;

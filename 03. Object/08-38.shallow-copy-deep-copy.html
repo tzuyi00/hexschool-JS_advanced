@@ -16,30 +16,34 @@
         ming: '小明'
       },
     }
-
-    // var newFamily = {};
-    // for (var key in family) {
-    //   // console.log(key, family[key]);
-    //   newFamily[key] = family[key];
-    // }
-    // newFamily.name = '杰倫家';
-    // console.log(family === newFamily)
-    // newFamily.members.ming = '大明';
-    // console.log(family, newFamily);
+    
     // // 淺層複製、shallow copy
-
-    // // jQuery
+    var newFamily = {};
+    for (var key in family) {
+      console.log(key, family[key]); //印出 '屬性' '值'
+      newFamily[key] = family[key]; 
+      // newFamily = family;
+    }
+    newFamily.name = '杰倫家'; //newFamily第一層的name被更替
+    console.log(family === newFamily);
+    // newFamily.members.ming = '大明'; //第二層依舊是傳參考模式，更改了newFamily，family也會被替換
+    // console.log(family, newFamily);
+    
+    // // jQuery淺層複製寫法
     // var newFamily2 = jQuery.extend({}, family);
 
-    // // ES6
+    // // ES6淺層複製寫法
     // var newFamily3 = Object.assign({}, family);
 
+    // --------------------------------------------------------------
+
     // 深層複製、deep copy
-    console.log(family, JSON.parse(JSON.stringify(family)));
-    var newFamily4 = JSON.parse(JSON.stringify(family));
-    newFamily4.name = '杰倫家';
-    newFamily4.members.ming = '大明';
-    console.log('family:'+ family, 'newFamily4:'+ newFamily4);
+    // console.log(family, JSON.parse(JSON.stringify(family))); //JSON.stringify將family轉為字串，JSON.parse再轉回物件 
+    // var newFamily4 = JSON.parse(JSON.stringify(family));
+    // console.log(family === newFamily4); //false 透過轉換兩者就無關聯了 
+    // newFamily4.name = '杰倫家';
+    // newFamily4.members.ming = '大明';
+    // console.log('family:'+ family, 'newFamily4:'+ newFamily4);
 
 
   </script>

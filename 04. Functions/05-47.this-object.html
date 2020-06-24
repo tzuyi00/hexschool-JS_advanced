@@ -7,19 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script>
+    // ★this與函式如何宣告沒有關連性，僅與呼叫方法有關
+    // ★物件的方法調用時，僅需要關注是在哪一個物件下呼叫
     
-    var myName = '真心鎮大冒險';
+    var myName = '真心鎮大冒險'; //全域變數(屬於window的)
 
     function callName() {
-      console.log(this, this.myName);
+      console.log(this, this.myName); 
     }
-    // callName();
 
+    // callName(); //window 真心鎮大冒險
+// ----------------------
     // var family = {
     //   myName: '小明家',
     //   callName: callName
     // }
-    // // family.callName();
+    // family.callName(); //{myName: "小明家", callName: ƒ} "小明家"
+// -----------------------
 
     // var family2 = {
     //   myName: '杰倫家',
@@ -37,6 +41,7 @@
     // }
     // family.callName();
     // family.Ming.callName();
+// -----------------------    
 
     var family = {
       myName: '小明家',
