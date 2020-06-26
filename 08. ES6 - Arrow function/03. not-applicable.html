@@ -13,15 +13,20 @@
   <script>
     // 常見錯誤
 
+    // 若要回傳的是一物件，可在{}外加()
     // const arrFn = ()=> ({data: 1});
-    // console.log(arrFn())
+    // console.log(arrFn());
+  // ------------------------------
 
+    // 搭配判斷式時，箭頭函式外也須加上()
     // let num = 0;
 
-    // const numFn = num || function () { return 1 };
+    // // const numFn = num || function () { return 1 }; //num是false，會執行後方函式
     // const numFn = num || (() => 1);
-    // console.log(numFn());
+    // console.log(numFn()); //1
+  // ------------------------------
 
+  // 注意this的指向
     // const person = {
     //   myName: '小明',
     //   callName: function () {
@@ -30,14 +35,16 @@
     // }
     // person.callName();
 
+    // 搭配Vue
     // const app = new Vue({
     //   data: {
     //     num: 1
     //   },
     //   created: ()=> {
-    //     console.log(this.num)
+    //     console.log(this.num) //使用箭頭會出錯
     //   }
     // })
+  // ----------------------------
 
     const Fn2 = function (a) {
       this.name = a;
@@ -47,7 +54,7 @@
     }
 
     const newObj = new Fn2('函式');
-    console.log(newObj.protoFn());
+    console.log(newObj.protoFn()); //箭頭函式取到的this是window
     
   </script>
 </body>

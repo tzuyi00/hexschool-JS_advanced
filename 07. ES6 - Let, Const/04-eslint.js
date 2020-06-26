@@ -3,8 +3,9 @@
 // 原文：https://github.com/airbnb/javascript
 // 中文：https://github.com/yuche/javascript#variables
 
-var a = 'a';
+// eslint-disable-next-line no-unused-vars
+const abc = 'a';
 
 // 'obj' is never reassigned. Use 'const'
-let obj = {};
+const obj = {};
 obj.a = 'a';

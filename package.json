@@ -9,8 +9,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^6.4.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
-  }
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-vue": "^6.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tzuyi00/hexschool-JS_advanced.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tzuyi00/hexschool-JS_advanced/issues"
+  },
+  "homepage": "https://github.com/tzuyi00/hexschool-JS_advanced#readme"
 }

@@ -10,12 +10,16 @@
     // Hoisting
 
     // console.log(Ming);
+    // let Ming = '小明';
+    // console.log(Ming);
+
+    // -----------------------------------
     
     // let Ming = '小明';
-
+    // console.log(Ming);
     // {
     //   // 創造
-    //   let Ming; // 暫時性死區 TDZ
+    //   // let Ming; // 暫時性死區 TDZ
 
     //   // 執行
     //   console.log(Ming); // 小明
@@ -27,12 +31,19 @@
     // 3. 有創造到執行的概念，但不會預先出現 undefined 而是出現錯誤提示
     // (文件不會表明這與 var 的 Hoisting 相同)
 
-    // console.log(a);
-    console.log(typeof a);
-    console.log(typeof myName);
+    console.log(a); //a is not defined
+    console.log(typeof a); //undefined
+    console.log(typeof myName);  //報錯
 
     let myName = '';
-
+    // -------------------------------------------
+    
+      // let a = 10;
+      // function fu(){
+      //   console.log(a);
+      //   let a = 20;
+      // }
+      // fu();
   </script>
 </head>
 

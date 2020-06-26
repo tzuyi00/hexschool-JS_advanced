@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 關於 ES6 的新增語法
+    // 1. 讓原有 JS 撰寫更為精簡（語法糖）
+    // 2. 讓 JS 撰寫觀念更為直覺、簡便（新方法）
+    
+
+    // 一般寫法:
+    // const callName = function(someone) {
+    //   return '我是' + someone;
+    // }
+// -----------
+    // 箭頭函式:
+    // const callName = (someone) => {
+    //   return '我是' + someone;
+    // }
+// -----------
+    // // 更精簡之箭頭函式:只可用於函式表達式
+    // // 1. 如果程式碼內容為表達式時，自動return結果
+    // const callName = (someone) => '我是' + someone;
+    
+    // // 2. 如果只有一個參數時，參數括號可省略
+    // const callName = someone => '我是' + someone;
+    // // 若沒有參數或參數有兩個以上時，則括號不可省略
+    const callName = (a) => '我是'+a;
+
+// ---------------
+
+    console.log(callName('小明'));
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

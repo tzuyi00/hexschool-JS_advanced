@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // Let, Const
+    // for (let i = 0; i < 10; i++) {
+    //   setTimeout(function () {
+    //     console.log('這執行第' + i + '次');
+    //   }, 0);
+    // }
+    // console.log('i:'+i);
+
+    // const 常數
+    // const person = {
+    //   name: '小明',
+    //   money: 500
+    // }
+    // person.name = '杰倫';
+    // console.log(person);
+    // person = {};
+    // console.log(person);
+
+    var person = {
+      name: '小明',
+      money: 500
+    }
+    person.name = '杰倫';
+
+    Object.freeze(person);
+    person.money = 1000;
+    console.log(person);
+
+    person = {};
+    console.log(person);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

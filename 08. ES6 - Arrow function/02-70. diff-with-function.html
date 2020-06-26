@@ -18,7 +18,7 @@
     //   console.log(arg);
     // }
     // nums(10, 50, 100, 50, 5, 1, 1, 1, 500);
-
+// ------------------------------------------------
 
     // # This 綁定的差異
     // 箭頭函式沒有自己的 This
@@ -26,44 +26,59 @@
     // var person = {
     //   myName: '小明',
     //   callName: () => { 
-    //     console.log('1', this.myName); // 1 小明
+    //     console.log('1', this.myName); // 1 全域
     //     setTimeout(() => {
     //       console.log('2', this.myName); // 2 全域
-    //       console.log('3', this);
+    //       console.log('3', this); //window
     //     }, 10);
     //   },
     // }
+
+    // // var person = {
+    // //   myName: '小明',
+    // //   callName: function() { 
+    // //     console.log('1', this.myName); // 1 小明
+    // //     setTimeout(() => {
+    // //       console.log('2', this.myName); // 2 全域
+    // //       console.log('3', this);
+    // //     }, 10);
+    // //   },
+    // // }
     // person.callName();
+// ---------------------------------------------------
 
     // # this 不同，導致 DOM 的 this 也會指向不同位置
     // const ele = document.querySelector('p');
     // ele.addEventListener('click', () => {
-    //   console.log(this)
+    //   console.log(this) //指向window
     // });
+// ---------------------------------------------------
 
     // # 也無法透過 call, apply, bind 重新給予 this
     // const family = {
     //   myName: '小明家',
     // }
     // const fn = (para1, para2) =>  {
-    //   console.log(this, para1, para2);
+    //   console.log(this, para1, para2); //window 小明 杰倫
     // }
     // fn.call(family, '小明', '杰倫');
 
+// ----------------------------------------------
+
+    // 傳統function可作為prototype建構函式使用，箭頭函式不行
     const Fn = function (a) {
       this.name = a;
     }
-
     const ArrowFn = (a) => {
       this.name = a;
     }
+    console.log(Fn.prototype, ArrowFn.prototype); //{constructor: ƒ} undefined
 
-    console.log(Fn.prototype, ArrowFn.prototype);
 
-    const a = new Fn('a');
-    console.log(a);
-
-    const b = new ArrowFn('b');
+    const a = new Fn('a'); 
+    const b = new ArrowFn('b'); 
+    console.log(a);//Fn {name: "a"}
+    console.log(b);//Uncaught TypeError: ArrowFn is not a constructor 報錯 此函是不是建構函式
     
   </script>
 </body>
