@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <!-- 套件載入 -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+  <script>
+    // randomuser寫法
+    // $.ajax({
+    //   url: 'https://randomuser.me/api/',
+    //   dataType: 'json',
+    //   success: function(data) {
+    //     console.log(data);
+    //   }
+    // });
+// =====================================================
+  
+    const url = 'https://randomuser.me/api/';
+
+    // let data = {};
+
+    //此為非同步行為
+    // $.ajax({
+    //   url: url,
+    // }).done(function (res) {
+    //   console.log(res); //取得api內的值
+    //   data = res.results;
+    //   console.log(data); //要在ajax內才能取到值
+    // });
+
+    // console.log(data); //{} 非同步行為，執行完才會執行ajax，抓到是window的data
+    // -------------------------
+    
+    // 取得指定seed物件
+    // $.ajax({
+    //   url: url,
+    // }).done(function (res) {
+    //   const seed = res.info.seed; //設一變數取此物件seed值
+    //   console.log(seed, res);
+
+    //   $.ajax({
+    //     url: `${url}?seed=${seed}`,  // 使用randomuser指定seed url方法(https://randomuser.me/api/?seed=你的seed值)
+    //   }).done(function(res2) {
+    //     console.log(res2); //與上方的res物件同
+    //   })
+    // });
+  // =====================================================
+
+    // 常見的非同步問題（不限於 Ajax）
+    // 1. 回呼地獄(嚴重巢狀)
+    // 2. 寫法不一致
+    // 3. 無法同時執行（jQuery 有並行寫法，但不直覺）
+
+    // 使用axios
+    axios.get(url)
+      .then((res) => {
+        console.log(1, res)
+        const seed = res.data.info.seed;
+        return axios.get(`${url}?seed=${seed}`) //此return的結果會在下個then做接收
+      })
+      .then((res) => {
+        console.log(2, res)
+      });
+
+    // 使用Promise
+    Promise.all([axios.get(url), axios.get(url)])
+      .then(([res1, res2]) => {
+        console.log(res1, res2)
+      })
+
+
+
+  </script>
+</body>
+
+</html>
